@@ -1,0 +1,351 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background: #669933;
+    padding: 2px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+button {
+    outline: none;
+    border: none;
+    margin-right: 20px;
+    background-color:transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width: 22px;
+    height: 26px;
+    -webkit-transition: all .08s ease-in;
+    transition: all .08s ease-in;
+}
+#main-wrapper {
+    max-width: 640px;
+    margin: 10px auto 0;
+}
+
+video {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    border-radius: 8px;
+}
+
+#video:-webkit-full-screen {
+  width: 100%;
+  height: 100%;
+}
+#videoContainer {
+    position: relative;
+    padding: 10px;
+    margin: 0 auto;
+    border: 8px solid rebeccapurple;
+    background-color: #eee;
+    border-radius: 8px;
+    box-shadow: 10px 10px 25px -4px rgba(0,0,0,0.55);
+}
+#video-controls {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+}
+#otherBtns {
+    position: absolute;
+    width: 100%;
+    bottom: 18px;
+    padding: 4px 0;
+    border-radius: 8px 8px 0px 0px;
+    background: rebeccapurple;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    opacity: 1;
+    -webkit-transition: all 0.6s ease-out;
+    -webkit-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
+}
+button:first-child {
+    margin-left: 10px;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background: rebeccapurple url("https://achievement-images.teamtreehouse.com/Mike_The_Frog.png") no-repeat center;
+    -webkit-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
+}
+
+.subtitles-menu {
+    display: none;
+}
+
+#progress {
+    position: relative;
+    color: rebeccapurple;
+    border: none;
+    outline: none;
+}
+progress[value] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    width: 100%;
+    height: 10px;
+    border-radius: 12px;
+}
+progress[value]::-webkit-progress-bar {
+    cursor: pointer;
+    display: inline-block;
+    background-color: rebeccapurple;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25) inset;
+    padding: 2px;
+    border-radius: 4px;
+}
+progress[value]::-moz-progress-value {
+    background-color: whitesmoke;
+    border-radius: 4px;
+}
+progress[value]::-moz-progress-bar {
+    cursor: pointer;
+    display: inline-block;
+    background-color: rebeccapurple;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25) inset;
+    padding: 2px;
+    border-radius: 4px;
+}
+progress[value]::-webkit-progress-value {
+    background-color: whitesmoke;
+    border-radius: 4px;
+}
+
+#video-time {
+    position: absolute;
+    right: 8px;
+    bottom: -10px;
+    display: inline-block;
+    color: #eee;
+    font-size: 14px; 
+    -webkit-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
+}
+button:hover {
+    opacity: .6;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+#otherBtns #vidFwdThirtySec {
+    background-image: url('../icons/jumpAhead.png');
+}
+
+#otherBtns #replay {
+    background-image: url('../icons/feature-replay-icon-320px.png');
+}
+#mute {
+    margin-left: auto;
+    margin-right: 4px;
+}
+
+.other-buttons button[data-state="mute"] {
+   background-image: url('../icons/volume-off-icon.png');
+}
+
+.other-buttons button[data-state="unmute"] {
+   background-image: url('../icons/volume-on-icon.png');
+}
+
+#otherBtns #fs {
+    background-image: url('../icons/Media_Viewer_Icon_-_Fullscreen.svg.png');
+}
+
+.other-buttons button[data-state="play"] {
+   background-image: url('../icons/pause-icon.png');
+}
+
+.other-buttons button[data-state="pause"] {
+   background-image: url('../icons/play-icon.png');
+}
+.controls button[data-state="subtitles"] {
+    padding: 0;
+    width: 28px;
+    color: white;
+    border-radius: 2px;
+    font-size: 12px;
+    border: solid 2px white;
+    z-index: 1000;
+}
+.subtitles-menu {
+    display:none;
+    position:absolute;
+    bottom:40px;
+    right:40px;
+    background:rebeccapurple;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    width:100px;
+    padding:10px;
+}
+
+.subtitles-menu li {
+    padding:2px;
+    text-align:center;
+    background: #ccc;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    padding: 0;
+    margin-right: 10px;
+    border-radius: 8px;
+    height: 7px;
+    border: 1px solid #bdc3c7;
+    background-color: #fff;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 150px;
+    -ms-flex: 0 1 150px;
+    flex: 0 1 150px;
+}
+#volumeslider {
+    -webkit-transition: all .06s ease-in-out;
+    transition: all .06s ease-in-out;
+    margin-right: 10px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	background-color: #ecf0f1;
+	border: 1px solid #bdc3c7;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+input[type=range]::-moz-range-track {
+    border-radius: 8px;
+    height: 7px;
+    border: 1px solid #bdc3c7;
+    background-color: #fff;
+}
+input[type=range]::-moz-range-thumb {
+    background: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+input[type="range"]::-ms-fill-lower,
+input[type="range"]::-ms-fill-upper {
+    background: transparent;
+}
+input[type="range"]::-ms-track {
+    border-radius: 8px;
+    height: 7px;
+    border: 1px solid #bdc3c7;
+    background-color: #fff;
+}
+input[type="range"]::-ms-thumb {
+    background-color: rebeccapurple;
+    border: 1px solid #bdc3c7;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.subtitles-menu li button {
+    border:none;
+    background:#333;
+    color:#fff;
+    cursor:pointer;
+    width:90%;
+    padding:2px 5px;
+    border-radius:2px;
+}
+#video-transcript {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius:8px;
+    background: #eee;
+    border: 5px solid rebeccapurple;
+}
+#video-transcript p:first-line {
+    font-size: 1.5rem;
+    color: rebeccapurple;
+}
+#video-transcript span:hover {
+    cursor: pointer;
+    color: whitesmoke;
+    font-size: 1.1em;
+    border-bottom: dotted 2px #669933;
+}
+.highlighted {
+    color: rebeccapurple;
+    font-size: 1.5em;
+}
+.ui-accordion-header {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; 
+    background: rebeccapurple;
+    font-size: 1.5em;
+    padding-left: 6px;
+    margin: 5px;
+}
+.ui-accordion-header:hover {
+    background: mediumpurple;
+    color: white;
+    cursor: pointer;
+}
+.ui-accordion-content {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    padding: 8px;
+    border-radius: 4px;
+    background: #ccc;
+    color: rebeccapurple;
+    list-style: none;
+}
+
+
+
+@media screen and (max-width: 480px) {
+    #main-wrapper {
+        margin-top: 50px;
+        padding: 20px;
+        background: #eee;
+    }
+    #otherBtns {
+        padding: 5px;
+    }
+    #otherBtns button {
+        height: 20px;
+    }
+    
+    #volumeslider {
+        display: none;
+    }
+    .ui-accordion-header {
+        font-size: 1em;
+    }
+    .ui-accordion-content {
+        font-size: .72em;
+        line-height: 21px;
+    }
+}
