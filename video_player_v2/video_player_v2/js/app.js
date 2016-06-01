@@ -77,7 +77,7 @@ function checkKeyPressed(e) {
         $("#otherBtns").css("display", "flex");
         $("#playpause").css("background-image", "url('../icons/play-icon.png')");
     });
-    $("#video-transcript").accordion({
+    $("#accordion").accordion({
         collapsible: true,
         active: false,
         heightStyle: "content"
@@ -166,7 +166,6 @@ var vidplay = function () {
         if (video.paused) {
             video.play();
             playpause.setAttribute('data-state', 'play');
-            
             videoControls.onmouseout = hoverFunction;
             videoContainer.onmouseout = hoverFunction;
         } else {

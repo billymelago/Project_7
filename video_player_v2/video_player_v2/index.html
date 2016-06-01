@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Video Player</title>
         <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
@@ -22,11 +23,12 @@
                     <video id="video" controls="true" preload="metadata" poster="https://achievement-images.teamtreehouse.com/Mike_The_Frog.png">
                         <source src="video/video.mp4" type="video/mp4">
                         <source src="video/video.ogg" type="video/oop">
-                        <track id="track-1" label="English" kind="subtitles" srclang="en" showing src="video/captions.vtt" showing>
+                        <track id="track-1" label="English" kind="subtitles" srclang="en" src="video/captions.vtt">
+                        <track id="track-2" label="English2" kind="subtitles" srclang="en" src="video/captions.vtt">
                     </video>
                     <div id="video-controls" class="controls" data-state="hidden">
                         <div class="progress">
-                            <progress id="progress" value="0" min="0">
+                            <progress id="progress" value="0" max="100">
                                 <span id="progress-bar"></span>
                             </progress>
                         </div><!-- /.progress -->
@@ -46,10 +48,10 @@
                     </div><!-- /#video-controls .controls -->
                 </figure><!-- /#videoContainer -->    
             </div><!-- /.video-wrapper -->
-            <div id="txt-wrapper">
+            <div id="txt-wrapper" class="video-transcript">
                
                 <!--Transcript-->
-                   <div id="accordion" id="video-transcript">
+                   <div id="accordion">
                        <h1>View Transcript</h1>
        <p class="transcript"><span class="ph01">Now that we've looked at the architecture of the internet, let's see how you might</span> <span class="ph02"> connect your personal devices to the internet inside your house.</span> <span class="ph03"> Well there are many ways to connect to the internet, and</span> <span class="ph04">most often people connect wirelessly.</span> <span class="ph05">Let's look at an example of how you can connect to the internet.</span> <span class="ph06">If you live in a city or a town, you probably have a coaxial cable for</span> <span class="ph07">cable Internet, or a phone line if you have DSL, running to the outside of</span> <span class="ph08">your house, that connects you to the Internet Service Provider, or ISP.</span> <span class="ph09">If you live far out in the country, you'll more likely have</span> <span class="ph10">a dish outside your house, connecting you wirelessly to your closest ISP, or</span> <span class="ph11">you might also use the telephone system.</span> <span class="ph12">Whether a wire comes straight from the ISP hookup outside your house, or</span> <span class="ph13">it travels over radio waves from your roof,</span> <span class="ph14">the first stop a wire will make once inside your house, is at your modem.</span> <span class="ph15">A modem is what connects the internet
   to your network at home.</span> <span class="ph16">A few common residential modems are DSL or</span></p>
@@ -63,7 +65,9 @@
                        </ul>
     </div>
            </div><!-- /.txt-wrapper -->
+            <footer><small><a href="https://teamtreehouse.com/williammelago" target="_blank" title="Profile of Billy Melago">Billy Melago TeamTreehouse Techdegree Program &copy;2016</a></small></footer>
         </div><!-- /#main-wrapper -->
+        
      <script src="js/app.js"></script>
     <script src="js/transcript.js"></script>    
     <script>

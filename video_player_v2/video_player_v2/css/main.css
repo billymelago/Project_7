@@ -41,7 +41,7 @@ video {
     position: relative;
     padding: 10px;
     margin: 0 auto;
-    border: 8px solid rebeccapurple;
+    border: 8px solid #663399;
     background-color: #eee;
     border-radius: 8px;
     box-shadow: 10px 10px 25px -4px rgba(0,0,0,0.55);
@@ -58,7 +58,7 @@ video {
     bottom: 18px;
     padding: 4px 0;
     border-radius: 8px 8px 0px 0px;
-    background: rebeccapurple;
+    background: #663399;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -86,7 +86,7 @@ button:first-child {
     opacity: 0;
     width: 100%;
     height: 100%;
-    background: rebeccapurple url("https://achievement-images.teamtreehouse.com/Mike_The_Frog.png") no-repeat center;
+    background: #663399 url("https://achievement-images.teamtreehouse.com/Mike_The_Frog.png") no-repeat center;
     -webkit-transition: all 0.6s ease-out;
     transition: all 0.6s ease-out;
 }
@@ -97,7 +97,7 @@ button:first-child {
 
 #progress {
     position: relative;
-    color: rebeccapurple;
+    color: #663399;
     border: none;
     outline: none;
 }
@@ -113,7 +113,7 @@ progress[value] {
 progress[value]::-webkit-progress-bar {
     cursor: pointer;
     display: inline-block;
-    background-color: rebeccapurple;
+    background-color: #663399;
     box-shadow: 0 2px 5px rgba(0,0,0,0.25) inset;
     padding: 2px;
     border-radius: 4px;
@@ -125,7 +125,7 @@ progress[value]::-moz-progress-value {
 progress[value]::-moz-progress-bar {
     cursor: pointer;
     display: inline-block;
-    background-color: rebeccapurple;
+    background-color: #663399;
     box-shadow: 0 2px 5px rgba(0,0,0,0.25) inset;
     padding: 2px;
     border-radius: 4px;
@@ -193,22 +193,22 @@ button:hover {
 .subtitles-menu {
     display:none;
     position:absolute;
-    bottom:40px;
+    bottom:60px;
     right:40px;
-    background:rebeccapurple;
-    list-style-type:none;
+    background:#663399;
+    list-style:none;
     margin:0;
-    padding:0;
     width:100px;
     padding:10px;
 }
 
 .subtitles-menu li {
-    padding:2px;
-    text-align:center;
+    font-size: .95em;
+    padding: 2px;
+    margin: 0;
+    text-align: center;
     background: #ccc;
 }
-
 input[type=range] {
     -webkit-appearance: none;
     padding: 0;
@@ -262,7 +262,7 @@ input[type="range"]::-ms-track {
     background-color: #fff;
 }
 input[type="range"]::-ms-thumb {
-    background-color: rebeccapurple;
+    background-color: #663399;
     border: 1px solid #bdc3c7;
     width: 20px;
     height: 20px;
@@ -279,31 +279,31 @@ input[type="range"]::-ms-thumb {
     padding:2px 5px;
     border-radius:2px;
 }
-#video-transcript {
+.video-transcript {
     margin-top: 10px;
     padding: 10px;
     border-radius:8px;
     background: #eee;
-    border: 5px solid rebeccapurple;
+    border: 5px solid #663399;
 }
-#video-transcript p:first-line {
+p:first-line {
     font-size: 1.5rem;
-    color: rebeccapurple;
+    color: #663399;
 }
-#video-transcript span:hover {
+span:hover {
     cursor: pointer;
     color: whitesmoke;
     font-size: 1.1em;
     border-bottom: dotted 2px #669933;
 }
 .highlighted {
-    color: rebeccapurple;
+    color: #663399;
     font-size: 1.5em;
 }
 .ui-accordion-header {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700; 
-    background: rebeccapurple;
+    background: #663399;
     font-size: 1.5em;
     padding-left: 6px;
     margin: 5px;
@@ -319,26 +319,36 @@ input[type="range"]::-ms-thumb {
     padding: 8px;
     border-radius: 4px;
     background: #ccc;
-    color: rebeccapurple;
+    color: #663399;
     list-style: none;
 }
-
-
+footer {
+    text-align: center;
+}
+#video-time {
+    color: #663399;
+}
 
 @media screen and (max-width: 480px) {
     #main-wrapper {
-        margin-top: 50px;
+        margin: 20px;
         padding: 20px;
         background: #eee;
+        border-radius: 8px;
     }
     #otherBtns {
         padding: 5px;
+        background-color: #663399;
     }
     #otherBtns button {
-        height: 20px;
+        height: 25px;
+        margin-right: 10px;
     }
     
-    #volumeslider {
+    #volumeslider,
+    #vidFwdThirtySec,
+    #replay,
+    #subtitles {
         display: none;
     }
     .ui-accordion-header {
@@ -347,5 +357,13 @@ input[type="range"]::-ms-thumb {
     .ui-accordion-content {
         font-size: .72em;
         line-height: 21px;
+    }
+    footer {
+        text-align: center;
+        margin: auto;
+    }
+    small {
+        font-size: .6em;
+        color: #663399;
     }
 }
