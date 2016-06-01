@@ -1,33 +1,4 @@
-/*document.addEventListener("DOMContentLoaded", function() {
-    var track = document.getElementById("track-1");
-    track.addEventListener("cuechange", function() {
-        var myTrack = this.track;
-        var myCues = myTrack.activeCues;
-        if(myCues.length > 0) {
-            var txtWrapper = document.getElementById("txt-wrapper");
-            txtWrapper.replaceChild((myCues[0].getCueAsHTML()), txtWrapper.firstChild);
-        }
-    },false);
-}, false);
-
-document.getElementById("myBtn").addEventListener("click", function () {
-    var myTrack = document.getElementById("track-1").track;
-    var myCues = myTrack.cues;
-    for (var i = 0; i < myCues.length; i++) {
-        document.getElementById("txt-wrapper").innerHTML += (myCues[i].getCueAsHTML().textContent + "<br/>");
-    }
-}, false);
-      function getCues() {          
-        var myTrack = document.getElementById("track-1").track; // get text track from track element          
-        var myCues = myTrack.cues;   // get list of cues                    
-        for (var i = 0; i < myCues.length; i++) {
-               //document.getElementById("display").innerHTML += (myCues[i].getCueAsHTML().textContent + "<br/>");  //append track label
-            document.getElementById("display").innerHTML += (myCues[i].text + "<br/>");  //append track label
-        }
-      }*/
-
-   
-    //Variables foe each button
+ //Variables foe each button
 var videoContainer = document.getElementById('videoContainer');
 var videoOverlay = document.getElementById('overlay');
 var videoControls = document.getElementById('video-controls');
@@ -123,9 +94,9 @@ function checkKeyPressed(e) {
     });
     subtitlesMenuButtons.push(button);
     return listItem;    
-    }
+    };
      //Building a caption menu
-    var subtitlesMenu;
+   
     if (video.textTracks) {
        var df = document.createDocumentFragment();
        var subtitlesMenu = df.appendChild(document.createElement('ul'));
@@ -178,14 +149,14 @@ var vidplay = function () {
             otherButtons.style.display = 'flex';    
     };
         } 
-    }
+    };
 var replayVideo = function () {
             video.pause();
 			video.currenttime = 0;
 			video.load();
             playpause.setAttribute('data-state', 'play');
             video.play();
-}
+};
 
 var muteSound = function() {
     video.muted = !video.muted;
@@ -196,7 +167,7 @@ var muteSound = function() {
        volumeslider.value = 100;
         mute.setAttribute('data-state', 'unmute');
     }
-}
+};
 
 var setVolume = function() {
     var seekto = volumeslider.value / 100;
@@ -283,7 +254,7 @@ function toggleFullScreen() {
 //Another user defined function — setFullscreenData() — is also called, which simply sets the value of a data-fullscreen attribute on the videoContainer (this makes use of data-states).
 var setFullscreenData = function(state) {
    videoContainer.setAttribute('data-fullscreen', !!state);
-}
+};
 //This is used simply to set some basic CSS to improve the styling of the custom controls when they are in fullscreen (see the sample code for further details). When a video goes into fullscreen mode, it usually displays a message indicating that the user can press the Esc key to exit fullscreen mode, so the code also needs to listen for relevant events in order to call the setFullscreenData() function to ensure the control styling is correct:
 document.addEventListener('fullscreenchange', function(e) {
    setFullscreenData(!!(document.fullScreen || document.fullscreenElement));
@@ -321,17 +292,4 @@ document.addEventListener("keydown", function(e) {
     toggleFullScreen();
   }
 }, false);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
