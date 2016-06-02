@@ -20,18 +20,17 @@
                 <figure id="videoContainer">
                     <div id="overlay"></div>
 
-                    <video id="video" controls="true" preload="metadata" poster="https://achievement-images.teamtreehouse.com/Mike_The_Frog.png">
+                    <video id="video" preload="metadata" poster="https://achievement-images.teamtreehouse.com/Mike_The_Frog.png">
                         <source src="video/video.mp4" type="video/mp4">
                         <source src="video/video.ogg" type="video/oop">
                         <track id="track-1" label="English" kind="subtitles" srclang="en" src="video/captions.vtt">
-                        <track id="track-2" label="English2" kind="subtitles" srclang="en" src="video/captions.vtt">
                     </video>
                     <div id="video-controls" class="controls" data-state="hidden">
-                        <div class="progress">
-                            <progress id="progress" value="0" max="100">
+                        
+                            <progress class="progress" id="progress" value="0">
                                 <span id="progress-bar"></span>
                             </progress>
-                        </div><!-- /.progress -->
+                        
                         <div id="video-time"><span id="curTimeText" title="Current Time"></span> / <span id="durTimeText" title="Durration"></span></div><!-- /#video-time -->
                         
                         <div id="otherBtns" class="other-buttons">

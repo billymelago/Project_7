@@ -44,16 +44,18 @@ function checkKeyPressed(e) {
     $("#video").bind("ended", function () {
         video.currentTime = 0;
         progress.value = 0;
-        video.load();
+        playpause.setAttribute('data-state', 'pause');
         $("#otherBtns").css("display", "flex");
-        $("#playpause").css("background-image", "url('../icons/play-icon.png')");
+        video.pause();
     });
     $("#accordion").accordion({
         collapsible: true,
         active: false,
         heightStyle: "content"
     });
-   
+    currentTimeText.innerHTML = "0:00";
+    durationTimeText.innerHTML = "0:00";
+    
     //Turn on custom cotrols
     videoControls.setAttribute('data-state', 'visible');
     
@@ -80,7 +82,7 @@ function checkKeyPressed(e) {
         });
         //Find the language to activate
         var lang = this.getAttribute('lang');
-        for (var i = 0; i < video.textTracks.length; i++) {
+        for (i = 0; i < video.textTracks.length; i++) {
             //For the subtitles-off button the first condition will never match so all will subtitles be turned off
             if (video.textTracks[i].language == lang) {
                 video.textTracks[i].mode = 'showing';
@@ -191,17 +193,17 @@ var progressBarFunction = function() {
     var durmins = Math.floor(video.duration / 60);
     var dursecs = Math.floor(video.duration - durmins * 60);
     if(cursecs <= 10) {
-        cursecs = "0"+cursecs;
+        cursecs = "0" + cursecs;
     }
     if(dursecs <= 10) {
-        dursecs = "0"+dursecs;
+        dursecs = "0" + dursecs;
     }
-    currentTimeText.innerHTML = curmins+":"+cursecs;
-    durationTimeText.innerHTML = durmins+":"+dursecs;
+    currentTimeText.innerHTML = curmins + ":" + cursecs;
+    durationTimeText.innerHTML = durmins + ":" + dursecs;
 };
 var progressBarVidSeek = function(e) {
     var pos = (e.pageX - this.offsetLeft) / this.offsetWidth;
-    video.currentTime = pos * video.duration;
+    video.currentTime =  pos * video.duration;
 };
 var ccFunction = function() {
     var track = document.getElementById("track-1");

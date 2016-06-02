@@ -135,7 +135,7 @@ var videoPlayerUI = {
                 } else {
                     videoPlayerUI.ph16.css('color', 'mediumpurple');
                     videoPlayerUI.ph16.css('font-size', '1em');
-                };
+                }
             });
 				
 },

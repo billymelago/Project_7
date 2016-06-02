@@ -17,8 +17,8 @@ button {
     cursor: pointer;
     width: 22px;
     height: 26px;
-    -webkit-transition: all .08s ease-in;
-    transition: all .08s ease-in;
+    -webkit-transition: all .1s ease-in;
+    transition: all .1s ease-in;
 }
 #main-wrapper {
     max-width: 640px;
@@ -94,7 +94,6 @@ button:first-child {
 .subtitles-menu {
     display: none;
 }
-
 #progress {
     position: relative;
     color: #663399;
@@ -134,13 +133,12 @@ progress[value]::-webkit-progress-value {
     background-color: whitesmoke;
     border-radius: 4px;
 }
-
 #video-time {
     position: absolute;
     right: 8px;
-    bottom: -10px;
+    bottom: -12px;
     display: inline-block;
-    color: #eee;
+    color: #663399;
     font-size: 14px; 
     -webkit-transition: all 0.6s ease-out;
     transition: all 0.6s ease-out;
@@ -325,8 +323,14 @@ span:hover {
 footer {
     text-align: center;
 }
-#video-time {
-    color: #663399;
+footer a {
+    color: rebeccapurple;
+}
+::cue {
+    color: palegreen;
+    background-color: rebeccapurple;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
 @media screen and (max-width: 480px) {
@@ -335,6 +339,9 @@ footer {
         padding: 20px;
         background: #eee;
         border-radius: 8px;
+    }
+    #video-time {
+        font-size: 12px;
     }
     #otherBtns {
         padding: 5px;
