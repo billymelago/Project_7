@@ -153,11 +153,10 @@ var vidplay = function () {
         } 
     };
 var replayVideo = function () {
+            
+			video.currentTime = 0;
+            playpause.setAttribute('data-state', 'pause');
             video.pause();
-			video.currenttime = 0;
-			video.load();
-            playpause.setAttribute('data-state', 'play');
-            video.play();
 };
 
 var muteSound = function() {
@@ -201,8 +200,9 @@ var progressBarFunction = function() {
     currentTimeText.innerHTML = curmins + ":" + cursecs;
     durationTimeText.innerHTML = durmins + ":" + dursecs;
 };
+//FINALLY!!!! Because this is inside two elements with a position of realative!
 var progressBarVidSeek = function(e) {
-    var pos = (e.pageX - this.offsetLeft) / this.offsetWidth;
+    var pos = (e.pageX - (this.offsetLeft + this.offsetParent.offsetLeft + this.offsetParent.offsetParent.offsetLeft)) / this.offsetWidth;
     video.currentTime =  pos * video.duration;
 };
 var ccFunction = function() {
